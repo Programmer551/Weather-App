@@ -1,0 +1,16 @@
+body {
+  background-color: cornflowerblue;
+  height: 100vh;
+}
+.navbar {
+  background-color: cyan !important;
+}
+.center {
+  /* background-color: antiquewhite; */
+  height: 90vh;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+/* .card {
+} */
