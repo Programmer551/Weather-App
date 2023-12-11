@@ -7,7 +7,7 @@ const avg = document.getElementById("avg_temp");
 const fire = (e) => {
   e.preventDefault();
   let value = input.value;
-  city.innerHTML = `${value}'s Temperature:`;
+
   let a = async () => {
     const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${value}&days=3`;
     const options = {
@@ -16,12 +16,13 @@ const fire = (e) => {
         "X-RapidAPI-Key": "b622ff5086msh6b4f8c0757192c0p11800bjsn30e8ed1641df",
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
-    };HTMLTemplateElement
+    };
+    HTMLTemplateElement;
 
     try {
       const response = await fetch(url, options);
       const result = await response.json();
-      console.log(result);
+      city.innerHTML = `${value}'s Temperature:`;
       let temp1 = result.forecast.forecastday[0].day.maxtemp_c;
       let temp2 = result.forecast.forecastday[0].day.mintemp_c;
       let temp3 = result.forecast.forecastday[0].day.avgtemp_c;
@@ -33,7 +34,6 @@ const fire = (e) => {
       max.innerHTML = "Not Found";
       min.innerHTML = "Not Found";
       avg.innerHTML = "Not Found";
-      console.error(error);
     }
   };
   a();
